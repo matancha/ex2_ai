@@ -1,0 +1,3 @@
+heuristic to guess how much time and to start iteration (does not have to be admissible)
+take V0 when close to convergence
+memoization
