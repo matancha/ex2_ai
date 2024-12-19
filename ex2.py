@@ -2,7 +2,7 @@ import zuma
 import copy
 import random
 
-id = ["313591935"]
+ids = ["313591935"]
 
 V_table = {}
 
