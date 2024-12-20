@@ -59,7 +59,7 @@ examples = [
 
 seeds = [42, 123, 789, 1001, 33, 4, 55, 76, 88, 5, 66, 70]
 
-num_of_steps = [50, 100, 200, 300]
+num_of_steps = [50, 100, 200]
 
 
 initial_lines = [

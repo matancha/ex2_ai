@@ -122,6 +122,7 @@ class Game:
         Takes chosen action from user and updates the game from its consequences.
         :param chosen_action: scalar (index of where to shoot the current ball)
         """
+        submit_result = list()
         self.get_ball()
         r_num = random.random()
         if r_num < self._chosen_action_prob[self._current_ball]:
@@ -129,13 +130,15 @@ class Game:
         else:
             action = random.choice([i for i in range(-1, len(self._line) + 1) if i != chosen_action])
         if self._debug:
-            submit_result = list()
+            # submit_result = list()
             submit_result.append(f'step {self._steps}, added ball: {self._current_ball}, prob: {r_num:1.4}, index: {action}')
             self._history.append(submit_result)
         if action != -1:
             self._line.insert(action, self._current_ball)
             self._line, add_reward = self._remove_group(self._line, action)
             self._reward += add_reward
+        if self._debug:
+            submit_result.append(f'new line: {self._line}, reward: {self._reward}')
         self._steps += 1
         self._current_ball = None
         if self._steps == self._max_steps:
